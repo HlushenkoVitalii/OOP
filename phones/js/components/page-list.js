@@ -20,6 +20,7 @@ class PageList {
     this.list.showList(this.phones);
 
     this.controls.el.addEventListener('search', this.search.bind(this));
+    this.controls.el.addEventListener('sort', this.sort.bind(this));
   }
 
 
@@ -38,5 +39,34 @@ class PageList {
     } else {
       this.list.showList(this.phones);
     }
+  }
+
+
+  sort(event) {
+    const value = event.detail.value;
+    const age = 'age';
+    const alphabetical = 'alphabetical';
+
+    function sortByAge(arr) {
+      arr.sort((a, b) => a.age > b.age ? 1 : -1);
+    }
+    
+    function sortByAlphabetical(arr) {
+      arr.sort((a, b) => a.name > b.name ? 1 : -1);
+    }
+
+    if (value === age) {
+      sortByAge(this.phones);
+      
+      this.list.showList(this.phones);
+
+    } 
+    
+    else {
+      sortByAlphabetical(this.phones);
+
+      this.list.showList(this.phones);
+    }
+
   }
 }
