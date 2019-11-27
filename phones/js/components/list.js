@@ -13,5 +13,6 @@ class List {
     });
 
     this.el.innerHTML = result;
+    location.hash = '!/phones'
   }
 }
