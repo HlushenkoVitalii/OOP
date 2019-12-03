@@ -6,13 +6,13 @@ class List {
   }
 
   showList(data) {
+    
     let result = '';
 
     data.forEach((item) => {
       result += this.tmpl(item);
     });
-
+    
     this.el.innerHTML = result;
-    location.hash = '!/phones'
   }
 }

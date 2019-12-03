@@ -5,19 +5,23 @@ class PageList {
 
     this.el = options.el;
     this.phones = phones;
+    this.template = startTemplate;
 
+
+    this.list = new List({
+      tmpl: document.getElementById('phone-item-tmpl'),
+      el: document.querySelector('[data-component="phones-list"]'),
+      
+    });
+
+    this.list.showList(this.phones);
+    
     this.controls = new Controls({
       el: this.el.querySelector('[data-component="phones-control"]'),
       sort: this.el.querySelector('[data-control="sort"]')
     });
-
-    this.list = new List({
-      el: this.el.querySelector('[data-component="phones-list"]'),
-      tmpl: document.getElementById('phone-item-tmpl')
-    });
-
-
-    this.list.showList(this.phones);
+    
+    
 
     this.controls.el.addEventListener('search', this.search.bind(this));
     this.controls.el.addEventListener('sort', this.sort.bind(this));
@@ -35,6 +39,7 @@ class PageList {
       });
 
       this.list.showList(filteredPhones);
+      
 
     } else {
       this.list.showList(this.phones);
@@ -47,23 +52,15 @@ class PageList {
     const age = 'age';
     const alphabetical = 'alphabetical';
 
-    function sortByAge(arr) {
-      arr.sort((a, b) => a.age > b.age ? 1 : -1);
-    }
-    
-    function sortByAlphabetical(arr) {
-      arr.sort((a, b) => a.name > b.name ? 1 : -1);
-    }
-
-    if (value === age) {
-      sortByAge(this.phones);
+      if (value === age) {
+      this.phones.sort((a, b) => a.age > b.age ? 1 : -1);
       
       this.list.showList(this.phones);
 
     } 
     
     else {
-      sortByAlphabetical(this.phones);
+      this.phones.sort((a, b) => a.name > b.name ? 1 : -1);
 
       this.list.showList(this.phones);
     }

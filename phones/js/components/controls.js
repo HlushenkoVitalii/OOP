@@ -8,8 +8,10 @@ class Controls {
 
 
       this.searchEl.addEventListener('input', this.onInput.bind(this));
-      this.sortEl.addEventListener('click', this.onSort.bind(this));
+      this.sortEl.addEventListener('change', this.onSort.bind(this));
   }
+
+
 
   onInput(event) {
     const value = event.target.value;
@@ -20,7 +22,7 @@ class Controls {
           value: value
         }
       });
-
+      
       this.el.dispatchEvent(controlEvent);
     }
 
