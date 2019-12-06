@@ -5,8 +5,6 @@ class Controls {
     this.searchEl = this.el.querySelector('[data-control="search"]');
     this.sortEl = this.el.querySelector('[data-control="sort"]');
 
-
-
       this.searchEl.addEventListener('input', this.onInput.bind(this));
       this.sortEl.addEventListener('change', this.onSort.bind(this));
   }

@@ -3,6 +3,7 @@ class List {
   constructor(options) {
     this.el = options.el;
     this.tmpl = _.template(options.tmpl.innerHTML);
+    
   }
 
   showList(data) {

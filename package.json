@@ -1,0 +1,30 @@
+{
+  "name": "Phone Galery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^9.7.3",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp-uglify-es": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GlushenkoVitaliy/OOP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GlushenkoVitaliy/OOP/issues"
+  },
+  "homepage": "https://github.com/GlushenkoVitaliy/OOP#readme"
+}

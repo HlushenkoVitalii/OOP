@@ -5,28 +5,24 @@ class PageList {
 
     this.el = options.el;
     this.phones = phones;
-    this.template = startTemplate;
-
 
     this.list = new List({
       tmpl: document.getElementById('phone-item-tmpl'),
-      el: document.querySelector('[data-component="phones-list"]'),
+      el: document.querySelector('[data-component="phones-list"]')
       
     });
 
-    this.list.showList(this.phones);
-    
     this.controls = new Controls({
       el: this.el.querySelector('[data-component="phones-control"]'),
       sort: this.el.querySelector('[data-control="sort"]')
     });
     
+    this.list.showList(this.phones);
     
-
     this.controls.el.addEventListener('search', this.search.bind(this));
     this.controls.el.addEventListener('sort', this.sort.bind(this));
   }
-
+  
 
   search(event) {
     const value = event.detail.value;
