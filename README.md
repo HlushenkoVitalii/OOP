@@ -1,3 +1,3 @@
 # OOP
 
-For run https://glushenkovitaliy.github.io/OOP/
+For run https://HlushenkoVitalii.github.io/OOP/
